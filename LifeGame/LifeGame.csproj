@@ -42,6 +42,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationObjects\Application.cs" />
+    <Compile Include="ApplicationObjects\ConsoleArgumentsApplication.cs" />
+    <Compile Include="ApplicationObjects\DefaultApplication.cs" />
+    <Compile Include="Exception\ArgumentExceptionMessage.cs" />
+    <Compile Include="Exception\HeightNotSpecifiedException.cs" />
+    <Compile Include="Exception\WidthNotSpecifiedException.cs" />
+    <Compile Include="GameObjects\Universe.cs" />
+    <Compile Include="Memento\BoardMemento.cs" />
+    <Compile Include="Memento\CareTaker.cs" />
+    <Compile Include="GameObjects\Cell.cs" />
+    <Compile Include="Commands\EnterCommand.cs" />
+    <Compile Include="Commands\SpaceCommand.cs" />
+    <Compile Include="Cursor\ConsoleCursor.cs" />
+    <Compile Include="Cursor\CursorField.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\MoveCommand.cs" />
+    <Compile Include="Commands\MoveDownCommand.cs" />
+    <Compile Include="Commands\MoveLeftCommand.cs" />
+    <Compile Include="Commands\MoveRightCommand.cs" />
+    <Compile Include="Commands\MoveUpCommand.cs" />
+    <Compile Include="GameObjects\GameBoard.cs" />
+    <Compile Include="GameOverManager\GameOverControl.cs" />
+    <Compile Include="GameOverManager\GameStrategyListCreator.cs" />
+    <Compile Include="GameOverManager\IGameOverStrategy.cs" />
+    <Compile Include="GameOverManager\NoAlive.cs" />
+    <Compile Include="GameOverManager\NoStateChange.cs" />
+    <Compile Include="GameOverManager\RepeatedEarlier.cs" />
+    <Compile Include="GameObjects\Generation.cs" />
+    <Compile Include="GameObjects\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
