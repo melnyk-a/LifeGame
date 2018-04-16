@@ -28,7 +28,7 @@ namespace LifeGame.GameObjects
             _generation.Show();
             Point startPosition = new Point(Console.CursorLeft, Console.CursorTop);
             _gameBoard.Show();
-            List<ICommand> commandList = CreateCommandList(startPosition, _cursor);
+            IList<ICommand> commandList = CreateCommandList(startPosition, _cursor);
             do
             {
                 _cursor.Show();
@@ -68,7 +68,7 @@ namespace LifeGame.GameObjects
 
         private void UpdateGameBoard()
         {
-            List<Point> alivePoints = new List<Point>();
+            IList<Point> alivePoints = new List<Point>();
             for (int i = 0; i < _gameBoard.Height; ++i)
             {
                 for (int j = 0; j < _gameBoard.Width; ++j)
@@ -90,14 +90,14 @@ namespace LifeGame.GameObjects
             _gameBoard.SetAlive(alivePoints);
         }
 
-        private List<IGameOverStrategy> CreateStrategyList()
+        private IList<IGameOverStrategy> CreateStrategyList()
         {
             GameStrategyListCreator creator = new GameStrategyListCreator(
                _gameOverControl.AliveHistory);
             return creator.Create();
         }
 
-        private List<ICommand> CreateCommandList(Point startPosition, ConsoleCursor cursor)
+        private IList<ICommand> CreateCommandList(Point startPosition, ConsoleCursor cursor)
         {
             int left = startPosition.X + _gameBoard.FrameSize;
             int top = startPosition.Y + _gameBoard.FrameSize;
@@ -107,7 +107,7 @@ namespace LifeGame.GameObjects
             int buttom = _gameBoard.Height + _gameBoard.FrameSize;
             CursorField _cursorField = new CursorField(left, top, right, buttom, cursor);
 
-            List<ICommand> commandList = new List<ICommand>
+            IList<ICommand> commandList = new List<ICommand>
             {
                 new MoveRightCommand(ConsoleKey.RightArrow, _cursorField),
                 new MoveLeftCommand(ConsoleKey.LeftArrow, _cursorField),

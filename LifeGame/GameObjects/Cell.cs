@@ -6,7 +6,7 @@ namespace LifeGame.GameObjects
     {
         private bool _isAlive;
         private char _symbol;
-        private readonly List<Cell> _neighbors = new List<Cell>();
+        private readonly IList<Cell> _neighbors = new List<Cell>();
 
         public bool IsAlive
         {

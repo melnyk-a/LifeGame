@@ -6,9 +6,9 @@ namespace LifeGame.GameOverManager
 {
     internal sealed class RepeatedEarlier : IGameOverStrategy
     {
-        private readonly List<BoardMemento> _boardMementos;
+        private readonly IList<BoardMemento> _boardMementos;
 
-        public RepeatedEarlier(List<BoardMemento> boardMementos)
+        public RepeatedEarlier(IList<BoardMemento> boardMementos)
         {
             _boardMementos = boardMementos;
         }

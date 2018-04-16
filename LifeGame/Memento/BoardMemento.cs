@@ -5,11 +5,11 @@ namespace LifeGame.Memento
 {
     internal sealed class BoardMemento
     {
-        public BoardMemento(List<Point> points)
+        public BoardMemento(IList<Point> points)
         {
             AlivePoints = points;
         }
 
-        public List<Point> AlivePoints { get; private set; }
+        public IList<Point> AlivePoints { get; private set; }
     }
 }

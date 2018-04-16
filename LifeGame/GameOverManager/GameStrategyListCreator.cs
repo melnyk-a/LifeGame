@@ -12,9 +12,9 @@ namespace LifeGame.GameOverManager
             _history = history;
         }
 
-        public List<IGameOverStrategy> Create()
+        public IList<IGameOverStrategy> Create()
         {
-            List<IGameOverStrategy> gameOverStrategies = new List<IGameOverStrategy>
+            IList<IGameOverStrategy> gameOverStrategies = new List<IGameOverStrategy>
             {
                 CreateNoStateStategy()
             };
@@ -41,7 +41,7 @@ namespace LifeGame.GameOverManager
 
         private IGameOverStrategy CreateRepeatedEarlierStrategy()
         {
-            List<BoardMemento> boardMementos = new List<BoardMemento>();
+            IList<BoardMemento> boardMementos = new List<BoardMemento>();
             for (int i = 0; i < _history.HistorySize; ++i)
             {
                 boardMementos.Add(_history[i]);

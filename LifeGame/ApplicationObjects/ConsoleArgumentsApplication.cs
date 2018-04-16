@@ -8,9 +8,9 @@ namespace LifeGame.ApplicationObjects
         private bool _isHeightSet = false;
         private bool _isWidthSet = false;
 
-        public ConsoleArgumentsApplication(string[] args)
+        public ConsoleArgumentsApplication(string[] arguments)
         {
-            ReadDate(args);
+            ReadDate(arguments);
             CheckDate();
             CreateUniverse();
         }

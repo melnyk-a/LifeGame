@@ -31,7 +31,7 @@ namespace LifeGame.GameObjects
 
         public BoardMemento Save()
         {
-            List<Point> liveCells = new List<Point>();
+            IList<Point> liveCells = new List<Point>();
             for (int i = 0; i < Height; ++i)
             {
                 for (int j = 0; j < Width; ++j)
@@ -45,7 +45,7 @@ namespace LifeGame.GameObjects
             return new BoardMemento(liveCells);
         }
 
-        public void SetAlive(List<Point> points)
+        public void SetAlive(IList<Point> points)
         {
             for (int i = 0; i < Height; ++i)
             {

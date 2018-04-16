@@ -12,7 +12,7 @@ namespace LifeGame.GameOverManager
 
         public CareTaker AliveHistory { get; private set; }
 
-        public bool IsGameOver(List<IGameOverStrategy> gameOverStrategies)
+        public bool IsGameOver(IList<IGameOverStrategy> gameOverStrategies)
         {
             bool isGameOver = false;
             for (int i = 0; i < gameOverStrategies.Count; ++i)

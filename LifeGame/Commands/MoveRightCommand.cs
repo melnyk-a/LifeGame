@@ -8,7 +8,6 @@ namespace LifeGame.Commands
     {
         public MoveRightCommand(ConsoleKey key, CursorField field) : base(key, field)
         {
-
         }
 
         protected override Point GetPoint()
