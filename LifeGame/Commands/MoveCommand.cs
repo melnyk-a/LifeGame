@@ -8,10 +8,10 @@ namespace LifeGame.Commands
     {
         protected CursorField _cursorField;
 
-        public MoveCommand(ConsoleKey key, CursorField field) : 
+        public MoveCommand(ConsoleKey key, CursorField cursorField) : 
             base(key)
         {
-            _cursorField = field;
+            _cursorField = cursorField;
         }
 
         public override void Execute()

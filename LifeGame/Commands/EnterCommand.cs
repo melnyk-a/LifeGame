@@ -9,10 +9,10 @@ namespace LifeGame.Commands
         private readonly GameBoard _board;
         private readonly CursorField _field;
 
-        public EnterCommand(ConsoleKey key, CursorField field, GameBoard gameBoard) : 
+        public EnterCommand(ConsoleKey key, CursorField field, GameBoard board) : 
             base(key)
         {
-            _board = gameBoard;
+            _board = board;
             _field = field;
         }
 
