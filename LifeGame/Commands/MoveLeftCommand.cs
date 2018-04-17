@@ -6,7 +6,8 @@ namespace LifeGame.Commands
 {
     internal sealed class MoveLeftCommand : MoveCommand
     {
-        public MoveLeftCommand(ConsoleKey key, CursorField field) : base(key, field)
+        public MoveLeftCommand(ConsoleKey key, CursorField field) : 
+            base(key, field)
         {
         }
 

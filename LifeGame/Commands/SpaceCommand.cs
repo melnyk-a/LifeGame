@@ -7,7 +7,8 @@ namespace LifeGame.Commands
     {
         private readonly Universe _application;
 
-        public SpaceCommand(ConsoleKey key, Universe application): base(key)
+        public SpaceCommand(ConsoleKey key, Universe application): 
+            base(key)
         {
             _application = application;
         }
