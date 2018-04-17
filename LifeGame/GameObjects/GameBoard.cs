@@ -6,6 +6,8 @@ namespace LifeGame.GameObjects
 {
     internal sealed class GameBoard
     {
+        private const int _countOfHorizontalFrame = 2;
+        private const int _countOfVerticalFrame = 2;
         private const char _frameSymbol = '+';
         private readonly Cell[,] _cells;
 
@@ -105,9 +107,9 @@ namespace LifeGame.GameObjects
 
         public void Show()
         {
-            for (int i = 0; i < Height + FrameSize * 2; ++i)
+            for (int i = 0; i < Height + FrameSize * _countOfVerticalFrame; ++i)
             {
-                for (int j = 0; j < Width + FrameSize * 2; ++j)
+                for (int j = 0; j < Width + FrameSize * _countOfHorizontalFrame; ++j)
                 {
                     if (i < FrameSize || i >= Height + FrameSize ||
                         j < FrameSize || j >= Width + FrameSize)

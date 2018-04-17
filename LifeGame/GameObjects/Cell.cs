@@ -4,6 +4,8 @@ namespace LifeGame.GameObjects
 {
     internal sealed class Cell
     {
+        private const char _aliveSymbol = 'O';
+        private const char _deadSymbol = ' ';
         private readonly IList<Cell> _neighbors = new List<Cell>();
         private bool _isAlive;
         private char _symbol;
@@ -14,7 +16,7 @@ namespace LifeGame.GameObjects
             set
             {
                 _isAlive = value;
-                _symbol = _isAlive ? 'O' : ' ';
+                _symbol = _isAlive ? _aliveSymbol : _deadSymbol;
             }
         }
 

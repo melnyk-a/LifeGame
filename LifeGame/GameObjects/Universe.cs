@@ -98,6 +98,10 @@ namespace LifeGame.GameObjects
 
         private void UpdateGameBoard()
         {
+            int deadCellAliveNeighbors = 3;
+            int aliveCellAliveNeighbors1 = 2;
+            int aliveCellAliveNeighbors2 = 3;
+
             IList<Point> alivePoints = new List<Point>();
             for (int i = 0; i < _gameBoard.Height; ++i)
             {
@@ -105,13 +109,13 @@ namespace LifeGame.GameObjects
                 {
                     Cell currentCell = _gameBoard[i, j];
                     if (!currentCell.IsAlive &&
-                        currentCell.GetAliveNeighborsCount() == 3)
+                        currentCell.GetAliveNeighborsCount() == deadCellAliveNeighbors)
                     {
                         alivePoints.Add(new Point(i, j));
                     }
                     else if (currentCell.IsAlive &&
-                        (currentCell.GetAliveNeighborsCount() == 2 ||
-                        currentCell.GetAliveNeighborsCount() == 3))
+                        (currentCell.GetAliveNeighborsCount() == aliveCellAliveNeighbors1 ||
+                        currentCell.GetAliveNeighborsCount() == aliveCellAliveNeighbors2))
                     {
                         alivePoints.Add(new Point(i, j));
                     }
