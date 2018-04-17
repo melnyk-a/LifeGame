@@ -7,18 +7,18 @@ namespace LifeGame.GameObjects
     internal sealed class GameBoard
     {
         private const char _frameSymbol = '+';
-        private readonly Cell[,] _cellsArray;
+        private readonly Cell[,] _cells;
 
         public GameBoard(int width, int height)
         {
             Height = height;
             Width = width;
-            _cellsArray = new Cell[Height, Width];
+            _cells = new Cell[Height, Width];
             for (int i = 0; i < Height; ++i)
             {
                 for (int j = 0; j < Width; ++j)
                 {
-                    _cellsArray[i, j] = new Cell();
+                    _cells[i, j] = new Cell();
                 }
             }
             SetNeighbor();
@@ -28,7 +28,7 @@ namespace LifeGame.GameObjects
         public int Height { get; private set; }
         public int Width { get; private set; }
 
-        public Cell this[int row, int coll] { get { return _cellsArray[row, coll]; } }
+        public Cell this[int row, int coll] { get { return _cells[row, coll]; } }
 
         public BoardMemento Save()
         {
@@ -37,7 +37,7 @@ namespace LifeGame.GameObjects
             {
                 for (int j = 0; j < Width; ++j)
                 {
-                    if (_cellsArray[i, j].IsAlive)
+                    if (_cells[i, j].IsAlive)
                     {
                         liveCells.Add(new Point(i, j));
                     }
@@ -52,12 +52,12 @@ namespace LifeGame.GameObjects
             {
                 for (int j = 0; j < Width; ++j)
                 {
-                    _cellsArray[i, j].IsAlive = false;
+                    _cells[i, j].IsAlive = false;
                 }
             }
             for (int i = 0; i < points.Count; ++i)
             {
-                _cellsArray[points[i].X, points[i].Y].IsAlive = true;
+                _cells[points[i].X, points[i].Y].IsAlive = true;
             }
         }
 
@@ -69,35 +69,35 @@ namespace LifeGame.GameObjects
                 {
                     if (j - 1 >= 0)
                     {
-                        _cellsArray[i, j].AddNeighbor(_cellsArray[i, j - 1]);
+                        _cells[i, j].AddNeighbor(_cells[i, j - 1]);
                     }
                     if (i - 1 >= 0 && j - 1 >= 0)
                     {
-                        _cellsArray[i, j].AddNeighbor(_cellsArray[i - 1, j - 1]);
+                        _cells[i, j].AddNeighbor(_cells[i - 1, j - 1]);
                     }
                     if (i - 1 >= 0)
                     {
-                        _cellsArray[i, j].AddNeighbor(_cellsArray[i - 1, j]);
+                        _cells[i, j].AddNeighbor(_cells[i - 1, j]);
                     }
                     if (j + 1 < Width)
                     {
-                        _cellsArray[i, j].AddNeighbor(_cellsArray[i, j + 1]);
+                        _cells[i, j].AddNeighbor(_cells[i, j + 1]);
                     }
                     if (j + 1 < Width && i + 1 < Height)
                     {
-                        _cellsArray[i, j].AddNeighbor(_cellsArray[i + 1, j + 1]);
+                        _cells[i, j].AddNeighbor(_cells[i + 1, j + 1]);
                     }
                     if (j + 1 < Width && i - 1 >= 0)
                     {
-                        _cellsArray[i, j].AddNeighbor(_cellsArray[i - 1, j + 1]);
+                        _cells[i, j].AddNeighbor(_cells[i - 1, j + 1]);
                     }
                     if (i + 1 < Height)
                     {
-                        _cellsArray[i, j].AddNeighbor(_cellsArray[i + 1, j]);
+                        _cells[i, j].AddNeighbor(_cells[i + 1, j]);
                     }
                     if (j - 1 >= 0 && i + 1 < Height)
                     {
-                        _cellsArray[i, j].AddNeighbor(_cellsArray[i + 1, j - 1]);
+                        _cells[i, j].AddNeighbor(_cells[i + 1, j - 1]);
                     }
                 }
             }
@@ -116,7 +116,7 @@ namespace LifeGame.GameObjects
                     }
                     else
                     {
-                        if (_cellsArray[i - FrameSize, j - FrameSize].IsAlive)
+                        if (_cells[i - FrameSize, j - FrameSize].IsAlive)
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
                         }
@@ -124,7 +124,7 @@ namespace LifeGame.GameObjects
                         {
                             Console.ResetColor();
                         }
-                        Console.Write(_cellsArray[i - FrameSize, j - FrameSize]);
+                        Console.Write(_cells[i - FrameSize, j - FrameSize]);
                     }
                 }
                 Console.WriteLine();
