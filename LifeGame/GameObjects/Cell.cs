@@ -10,10 +10,7 @@ namespace LifeGame.GameObjects
 
         public bool IsAlive
         {
-            get
-            {
-                return _isAlive;
-            }
+            get { return _isAlive; }
             set
             {
                 _isAlive = value;

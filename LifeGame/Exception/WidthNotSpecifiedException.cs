@@ -6,10 +6,7 @@ namespace LifeGame.Exception
     {
         public override string Message
         {
-            get
-            {
-                return "Width of the Universe was not specified.";
-            }
+            get { return "Width of the Universe was not specified."; }
         }
     }
 }

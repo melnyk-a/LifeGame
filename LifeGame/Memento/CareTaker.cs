@@ -6,8 +6,8 @@ namespace LifeGame.Memento
     {
         private readonly IList<BoardMemento> _history = new List<BoardMemento>();
 
-        public int HistorySize { get => _history.Count; }
-        public BoardMemento this[int index] { get => _history[index]; }
+        public int HistorySize { get { return _history.Count; } }
+        public BoardMemento this[int index] { get { return _history[index]; } }
 
         public void Add(BoardMemento memento)
         {
