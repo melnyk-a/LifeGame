@@ -24,12 +24,12 @@ namespace LifeGame.ApplicationObjects
                     _height = Convert.ToInt32(item.Substring(1));
                     _isHeightSet = true;
                 }
-                if (item.StartsWith("w"))
+                else if (item.StartsWith("w"))
                 {
                     _width = Convert.ToInt32(item.Substring(1));
                     _isWidthSet = true;
                 }
-                if (item.StartsWith("s"))
+                else if(item.StartsWith("s"))
                 {
                     _delay = Convert.ToInt32(item.Substring(1));
                 }
