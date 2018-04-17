@@ -9,11 +9,12 @@ namespace LifeGame.GameObjects
 {
     internal sealed class Universe
     {
-        private readonly GameOverControl _gameOverControl = new GameOverControl();
         private readonly ConsoleCursor _cursor = new ConsoleCursor();
-        private readonly GameBoard _gameBoard;
-        private Generation _generation = new Generation();
         private readonly int _delay;
+        private readonly GameBoard _gameBoard;
+        private readonly GameOverControl _gameOverControl = new GameOverControl();
+        private Generation _generation = new Generation();
+        
 
         public Universe(int width, int height, int delay)
         {
@@ -22,6 +23,35 @@ namespace LifeGame.GameObjects
         }
 
         public bool IsGameOver { get; set; }
+
+        private IList<ICommand> CreateCommandList(Point startPosition, ConsoleCursor cursor)
+        {
+            int left = startPosition.X + _gameBoard.FrameSize;
+            int top = startPosition.Y + _gameBoard.FrameSize;
+
+            // -1 для корректного отображения курсора после ввода
+            int right = _gameBoard.Width + _gameBoard.FrameSize - 1;
+            int button = _gameBoard.Height + _gameBoard.FrameSize;
+            CursorField _cursorField = new CursorField(left, top, right, button, cursor);
+
+            IList<ICommand> commandList = new List<ICommand>
+            {
+                new MoveRightCommand(ConsoleKey.RightArrow, _cursorField),
+                new MoveLeftCommand(ConsoleKey.LeftArrow, _cursorField),
+                new MoveDownCommand(ConsoleKey.DownArrow, _cursorField),
+                new MoveUpCommand(ConsoleKey.UpArrow, _cursorField),
+                new EnterCommand(ConsoleKey.Enter, _cursorField, _gameBoard),
+                new SpaceCommand(ConsoleKey.Spacebar, this)
+            };
+            return commandList;
+        }
+
+        private IList<IGameOverStrategy> CreateStrategyList()
+        {
+            GameStrategyListCreator creator = new GameStrategyListCreator(
+               _gameOverControl.AliveHistory);
+            return creator.Create();
+        }
 
         public void Execute()
         {
@@ -88,35 +118,6 @@ namespace LifeGame.GameObjects
                 }
             }
             _gameBoard.SetAlive(alivePoints);
-        }
-
-        private IList<IGameOverStrategy> CreateStrategyList()
-        {
-            GameStrategyListCreator creator = new GameStrategyListCreator(
-               _gameOverControl.AliveHistory);
-            return creator.Create();
-        }
-
-        private IList<ICommand> CreateCommandList(Point startPosition, ConsoleCursor cursor)
-        {
-            int left = startPosition.X + _gameBoard.FrameSize;
-            int top = startPosition.Y + _gameBoard.FrameSize;
-
-            // -1 для корректного отображения курсора после ввода
-            int right = _gameBoard.Width + _gameBoard.FrameSize - 1;
-            int button = _gameBoard.Height + _gameBoard.FrameSize;
-            CursorField _cursorField = new CursorField(left, top, right, button, cursor);
-
-            IList<ICommand> commandList = new List<ICommand>
-            {
-                new MoveRightCommand(ConsoleKey.RightArrow, _cursorField),
-                new MoveLeftCommand(ConsoleKey.LeftArrow, _cursorField),
-                new MoveDownCommand(ConsoleKey.DownArrow, _cursorField),
-                new MoveUpCommand(ConsoleKey.UpArrow, _cursorField),
-                new EnterCommand(ConsoleKey.Enter, _cursorField, _gameBoard),
-                new SpaceCommand(ConsoleKey.Spacebar, this)
-            };
-            return commandList;
         }
     }
 }

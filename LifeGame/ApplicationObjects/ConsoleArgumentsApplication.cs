@@ -8,6 +8,18 @@ namespace LifeGame.ApplicationObjects
         private bool _isHeightSet = false;
         private bool _isWidthSet = false;
 
+        private void CheckDate()
+        {
+            if (_isHeightSet && !_isWidthSet)
+            {
+                throw new WidthNotSpecifiedException();
+            }
+            else if (!_isHeightSet && _isWidthSet)
+            {
+                throw new HeightNotSpecifiedException();
+            }
+        }
+
         public ConsoleArgumentsApplication(string[] arguments)
         {
             ReadDate(arguments);
@@ -33,18 +45,6 @@ namespace LifeGame.ApplicationObjects
                 {
                     _delay = Convert.ToInt32(item.Substring(1));
                 }
-            }
-        }
-
-        private void CheckDate()
-        {
-            if (_isHeightSet && !_isWidthSet)
-            {
-                throw new WidthNotSpecifiedException();
-            }
-            else if (!_isHeightSet && _isWidthSet)
-            {
-                throw new HeightNotSpecifiedException();
             }
         }
     }

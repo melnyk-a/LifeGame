@@ -4,9 +4,9 @@ namespace LifeGame.GameObjects
 {
     internal sealed class Cell
     {
+        private readonly IList<Cell> _neighbors = new List<Cell>();
         private bool _isAlive;
         private char _symbol;
-        private readonly IList<Cell> _neighbors = new List<Cell>();
 
         public bool IsAlive
         {

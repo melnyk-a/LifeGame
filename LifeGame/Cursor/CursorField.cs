@@ -15,10 +15,10 @@ namespace LifeGame.Cursor
             Cursor.CursorPosition = startPosition;
         }
 
-        public int Left { get; }
-        public int Top { get; }
-        public int Right { get; }
-        public int Button { get; }
         public ConsoleCursor Cursor { get; }
+        public int Button { get; }
+        public int Left { get; }
+        public int Right { get; }
+        public int Top { get; }
     }
 }

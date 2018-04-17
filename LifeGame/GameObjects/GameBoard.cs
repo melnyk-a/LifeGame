@@ -25,8 +25,8 @@ namespace LifeGame.GameObjects
         }
 
         public int FrameSize { get; } = 1;
-        public int Width { get; private set; }
         public int Height { get; private set; }
+        public int Width { get; private set; }
 
         public Cell this[int row, int coll] { get { return _cellsArray[row, coll]; } }
 
