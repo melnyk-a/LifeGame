@@ -69,35 +69,35 @@ namespace LifeGame.GameObjects
                 {
                     if (j - 1 >= 0)
                     {
-                        _cellsArray[i, j].AddNeigbor(_cellsArray[i, j - 1]);
+                        _cellsArray[i, j].AddNeighbor(_cellsArray[i, j - 1]);
                     }
                     if (i - 1 >= 0 && j - 1 >= 0)
                     {
-                        _cellsArray[i, j].AddNeigbor(_cellsArray[i - 1, j - 1]);
+                        _cellsArray[i, j].AddNeighbor(_cellsArray[i - 1, j - 1]);
                     }
                     if (i - 1 >= 0)
                     {
-                        _cellsArray[i, j].AddNeigbor(_cellsArray[i - 1, j]);
+                        _cellsArray[i, j].AddNeighbor(_cellsArray[i - 1, j]);
                     }
                     if (j + 1 < Width)
                     {
-                        _cellsArray[i, j].AddNeigbor(_cellsArray[i, j + 1]);
+                        _cellsArray[i, j].AddNeighbor(_cellsArray[i, j + 1]);
                     }
                     if (j + 1 < Width && i + 1 < Height)
                     {
-                        _cellsArray[i, j].AddNeigbor(_cellsArray[i + 1, j + 1]);
+                        _cellsArray[i, j].AddNeighbor(_cellsArray[i + 1, j + 1]);
                     }
                     if (j + 1 < Width && i - 1 >= 0)
                     {
-                        _cellsArray[i, j].AddNeigbor(_cellsArray[i - 1, j + 1]);
+                        _cellsArray[i, j].AddNeighbor(_cellsArray[i - 1, j + 1]);
                     }
                     if (i + 1 < Height)
                     {
-                        _cellsArray[i, j].AddNeigbor(_cellsArray[i + 1, j]);
+                        _cellsArray[i, j].AddNeighbor(_cellsArray[i + 1, j]);
                     }
                     if (j - 1 >= 0 && i + 1 < Height)
                     {
-                        _cellsArray[i, j].AddNeigbor(_cellsArray[i + 1, j - 1]);
+                        _cellsArray[i, j].AddNeighbor(_cellsArray[i + 1, j - 1]);
                     }
                 }
             }

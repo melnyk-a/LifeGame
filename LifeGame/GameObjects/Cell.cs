@@ -18,9 +18,9 @@ namespace LifeGame.GameObjects
             }
         }
 
-        public void AddNeigbor(Cell neigbor)
+        public void AddNeighbor(Cell neighbor)
         {
-            _neighbors.Add(neigbor);
+            _neighbors.Add(neighbor);
         }
 
         public int GetAliveNeighborsCount()

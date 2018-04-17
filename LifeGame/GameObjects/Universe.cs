@@ -104,8 +104,8 @@ namespace LifeGame.GameObjects
 
             // -1 для корректного отображения курсора после ввода
             int right = _gameBoard.Width + _gameBoard.FrameSize - 1;
-            int buttom = _gameBoard.Height + _gameBoard.FrameSize;
-            CursorField _cursorField = new CursorField(left, top, right, buttom, cursor);
+            int button = _gameBoard.Height + _gameBoard.FrameSize;
+            CursorField _cursorField = new CursorField(left, top, right, button, cursor);
 
             IList<ICommand> commandList = new List<ICommand>
             {
