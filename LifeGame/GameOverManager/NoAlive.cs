@@ -11,9 +11,9 @@ namespace LifeGame.GameOverManager
             _memento = memento;
         }
 
-        public bool IsGameOver()
+        public bool IsGameOver
         {
-            return _memento.AlivePoints.Count == 0;
+            get { return _memento.AlivePoints.Count == 0; }
         }
     }
 }

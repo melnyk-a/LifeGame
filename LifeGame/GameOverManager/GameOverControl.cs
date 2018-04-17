@@ -17,7 +17,7 @@ namespace LifeGame.GameOverManager
             bool isGameOver = false;
             for (int i = 0; i < gameOverStrategies.Count; ++i)
             {
-                isGameOver = gameOverStrategies[i].IsGameOver();
+                isGameOver = gameOverStrategies[i].IsGameOver;
                 if (isGameOver)
                 {
                     break;

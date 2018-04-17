@@ -2,6 +2,6 @@
 {
     internal interface IGameOverStrategy
     {
-        bool IsGameOver();
+        bool IsGameOver { get; }
     }
 }

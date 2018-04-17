@@ -14,9 +14,9 @@ namespace LifeGame.GameOverManager
             _previousState = previousState;
         }
 
-        public bool IsGameOver()
+        public bool IsGameOver
         {
-            return _currentState.AlivePoints.SequenceEqual(_previousState.AlivePoints);
+            get { return _currentState.AlivePoints.SequenceEqual(_previousState.AlivePoints); }
         }
     }
 }

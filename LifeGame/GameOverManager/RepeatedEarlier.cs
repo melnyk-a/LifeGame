@@ -13,28 +13,31 @@ namespace LifeGame.GameOverManager
             _boardMementos = boardMementos;
         }
 
-        public bool IsGameOver()
+        public bool IsGameOver
         {
-            bool isGameOver = false;
-            if (_boardMementos.Count > 1)
+            get
             {
-                for (int i = 0; i < _boardMementos.Count - 1; ++i)
+                bool isGameOver = false;
+                if (_boardMementos.Count > 1)
                 {
-                    for (int j = 1; j < _boardMementos.Count; ++j)
+                    for (int i = 0; i < _boardMementos.Count - 1; ++i)
                     {
-                        if (i != j)
+                        for (int j = 1; j < _boardMementos.Count; ++j)
                         {
-                            isGameOver = _boardMementos[i].AlivePoints.SequenceEqual(
-                            _boardMementos[j].AlivePoints);
-                            if (isGameOver)
+                            if (i != j)
                             {
-                                break;
+                                isGameOver = _boardMementos[i].AlivePoints.SequenceEqual(
+                                _boardMementos[j].AlivePoints);
+                                if (isGameOver)
+                                {
+                                    break;
+                                }
                             }
                         }
                     }
                 }
+                return isGameOver;
             }
-            return isGameOver;
         }
     }
 }
