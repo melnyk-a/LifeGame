@@ -4,12 +4,12 @@ namespace LifeGame.Cursor
 {
     internal sealed class CursorField
     {
-        public CursorField(int left, int top, int right, int button, ConsoleCursor cursor)
+        public CursorField(int left, int top, int right, int bottom, ConsoleCursor cursor)
         {
             Left = left;
             Top = top;
             Right = right;
-            Button = button;
+            Bottom = bottom;
             Cursor = cursor;
             Point startPosition = new Point(Left, Top);
             Cursor.CursorPosition = startPosition;
@@ -17,7 +17,7 @@ namespace LifeGame.Cursor
 
         public ConsoleCursor Cursor { get; }
 
-        public int Button { get; }
+        public int Bottom { get; }
 
         public int Left { get; }
 

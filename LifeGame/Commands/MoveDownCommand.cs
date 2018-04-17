@@ -14,7 +14,7 @@ namespace LifeGame.Commands
         protected override Point GetPoint()
         {
             Point newPoint = _cursorField.Cursor.CursorPosition;
-            if (_cursorField.Cursor.CursorPosition.Y < _cursorField.Button)
+            if (_cursorField.Cursor.CursorPosition.Y < _cursorField.Bottom)
             {
                 ++newPoint.Y;
             }
