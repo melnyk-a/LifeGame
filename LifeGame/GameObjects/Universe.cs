@@ -102,7 +102,7 @@ namespace LifeGame.GameObjects
             int left = startPosition.X + _gameBoard.FrameSize;
             int top = startPosition.Y + _gameBoard.FrameSize;
 
-            //-1 для корректного отображения курсора после ввода
+            // -1 для корректного отображения курсора после ввода
             int right = _gameBoard.Width + _gameBoard.FrameSize - 1;
             int buttom = _gameBoard.Height + _gameBoard.FrameSize;
             CursorField _cursorField = new CursorField(left, top, right, buttom, cursor);
