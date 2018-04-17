@@ -15,6 +15,7 @@ namespace LifeGame.Commands
         {
             return _key == key;
         }
+
         public abstract void Execute();
     }
 }

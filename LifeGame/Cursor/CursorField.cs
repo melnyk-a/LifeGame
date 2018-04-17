@@ -11,7 +11,6 @@ namespace LifeGame.Cursor
             Right = right;
             Buttom = buttom;
             Cursor = cursor;
-
             Point startPosition = new Point(Left, Top);
             Cursor.CursorPosition = startPosition;
         }
