@@ -6,8 +6,8 @@ namespace LifeGame.Commands
 {
     internal sealed class MoveDownCommand : MoveCommand
     {
-        public MoveDownCommand(ConsoleKey key, CursorField field) : 
-            base(key, field)
+        public MoveDownCommand(ConsoleKey key, CursorField cursorField) : 
+            base(key, cursorField)
         {
         }
 
