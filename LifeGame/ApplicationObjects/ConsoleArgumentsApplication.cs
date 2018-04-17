@@ -37,17 +37,23 @@ namespace LifeGame.ApplicationObjects
             {
                 if (argument.StartsWith(_heightID))
                 {
-                    _height = Convert.ToInt32(argument.Substring(startIndexForConvert));
-                    _isHeightSet = true;
+                    _isHeightSet= int.TryParse(argument.Substring(startIndexForConvert), out int height);
+                    if (height!=0)
+                    {
+                        _height=height;
+                    }
                 }
                 else if (argument.StartsWith(_widthID))
                 {
-                    _width = Convert.ToInt32(argument.Substring(startIndexForConvert));
-                    _isWidthSet = true;
+                    _isWidthSet = int.TryParse(argument.Substring(startIndexForConvert), out int width);
+                    if (width != 0)
+                    {
+                        _width = width;
+                    }
                 }
                 else if(argument.StartsWith(_speedID))
                 {
-                    _delay = Convert.ToInt32(argument.Substring(startIndexForConvert));
+                    Int32.TryParse(argument.Substring(startIndexForConvert),out _delay);
                 }
             }
         }
