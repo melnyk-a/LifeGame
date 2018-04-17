@@ -63,11 +63,11 @@ namespace LifeGame.GameObjects
             {
                 _cursor.Show();
                 ConsoleKey key = Console.ReadKey().Key;
-                foreach (var item in commands)
+                foreach (var command in commands)
                 {
-                    if (item.CanExecute(key))
+                    if (command.CanExecute(key))
                     {
-                        item.Execute();
+                        command.Execute();
                     }
                 }
                 Console.SetCursorPosition(startPosition.X, startPosition.Y);

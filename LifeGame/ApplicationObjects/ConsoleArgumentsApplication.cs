@@ -29,21 +29,21 @@ namespace LifeGame.ApplicationObjects
 
         private void ReadDate(string[] commandLineArguments)
         {
-            foreach (var item in commandLineArguments)
+            foreach (var argument in commandLineArguments)
             {
-                if (item.StartsWith("h"))
+                if (argument.StartsWith("h"))
                 {
-                    _height = Convert.ToInt32(item.Substring(1));
+                    _height = Convert.ToInt32(argument.Substring(1));
                     _isHeightSet = true;
                 }
-                else if (item.StartsWith("w"))
+                else if (argument.StartsWith("w"))
                 {
-                    _width = Convert.ToInt32(item.Substring(1));
+                    _width = Convert.ToInt32(argument.Substring(1));
                     _isWidthSet = true;
                 }
-                else if(item.StartsWith("s"))
+                else if(argument.StartsWith("s"))
                 {
-                    _delay = Convert.ToInt32(item.Substring(1));
+                    _delay = Convert.ToInt32(argument.Substring(1));
                 }
             }
         }
