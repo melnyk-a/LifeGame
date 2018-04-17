@@ -6,7 +6,7 @@ namespace LifeGame.GameObjects
 {
     internal sealed class GameBoard
     {
-        private const char _frameChar = '+';
+        private const char _frameSymbol = '+';
         private readonly Cell[,] _cellsArray;
 
         public GameBoard(int width, int height)
@@ -111,7 +111,7 @@ namespace LifeGame.GameObjects
                     if (i < FrameSize || i >= Height + FrameSize ||
                         j < FrameSize || j >= Width + FrameSize)
                     {
-                        Console.Write(_frameChar);
+                        Console.Write(_frameSymbol);
                     }
                     else
                     {

@@ -10,21 +10,21 @@ namespace LifeGame
             application.Run();
         }
 
-        private static void Main(string[] args)
+        private static void Main(string[] commandLineArguments)
         {
-            if (args.Length != 0)
+            if (commandLineArguments.Length != 0)
             {
                 try
                 {
-                    Execute(new ConsoleArgumentsApplication(args));
+                    Execute(new ConsoleArgumentsApplication(commandLineArguments));
                 }
-                catch (WidthNotSpecifiedException ex)
+                catch (WidthNotSpecifiedException exception)
                 {
-                    ArgumentExceptionMessage.Show(ex);
+                    ArgumentExceptionMessage.Show(exception);
                 }
-                catch (HeightNotSpecifiedException ex)
+                catch (HeightNotSpecifiedException exception)
                 {
-                    ArgumentExceptionMessage.Show(ex);
+                    ArgumentExceptionMessage.Show(exception);
                 }
             }
             else

@@ -15,9 +15,9 @@ namespace LifeGame.ApplicationObjects
             CreateUniverse();
         }
 
-        private void ReadDate(string[] args)
+        private void ReadDate(string[] commandLineArguments)
         {
-            foreach (var item in args)
+            foreach (var item in commandLineArguments)
             {
                 if (item.StartsWith("h"))
                 {
