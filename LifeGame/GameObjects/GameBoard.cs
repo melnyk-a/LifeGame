@@ -26,11 +26,11 @@ namespace LifeGame.GameObjects
             SetNeighbor();
         }
 
+        public Cell this[int row, int coll] { get { return _cells[row, coll]; } }
+
         public int FrameSize { get; } = 1;
         public int Height { get; }
         public int Width { get;  }
-
-        public Cell this[int row, int coll] { get { return _cells[row, coll]; } }
 
         public BoardMemento Save()
         {
