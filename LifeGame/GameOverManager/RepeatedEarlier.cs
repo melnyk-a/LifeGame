@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using LifeGame.Memento;
+using System.Collections.Generic;
 using System.Linq;
-using LifeGame.Memento;
 
 namespace LifeGame.GameOverManager
 {

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using LifeGame.GameObjects;
+﻿using LifeGame.GameObjects;
+using System.Collections.Generic;
 
 namespace LifeGame.Memento
 {

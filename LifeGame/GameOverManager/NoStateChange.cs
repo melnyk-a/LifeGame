@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using LifeGame.Memento;
+﻿using LifeGame.Memento;
+using System.Linq;
 
 namespace LifeGame.GameOverManager
 {

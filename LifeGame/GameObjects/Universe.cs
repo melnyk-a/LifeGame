@@ -1,9 +1,9 @@
-﻿using LifeGame.GameOverManager;
+﻿using LifeGame.Commands;
+using LifeGame.Cursor;
+using LifeGame.GameOverManager;
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using LifeGame.Cursor;
-using LifeGame.Commands;
 
 namespace LifeGame.GameObjects
 {
