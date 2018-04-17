@@ -37,10 +37,10 @@ namespace LifeGame.ApplicationObjects
             {
                 if (argument.StartsWith(_heightID))
                 {
-                    _isHeightSet= int.TryParse(argument.Substring(startIndexForConvert), out int height);
-                    if (height!=0)
+                    _isHeightSet = int.TryParse(argument.Substring(startIndexForConvert), out int height);
+                    if (height != 0)
                     {
-                        _height=height;
+                        _height = height;
                     }
                 }
                 else if (argument.StartsWith(_widthID))
@@ -51,9 +51,9 @@ namespace LifeGame.ApplicationObjects
                         _width = width;
                     }
                 }
-                else if(argument.StartsWith(_speedID))
+                else if (argument.StartsWith(_speedID))
                 {
-                    Int32.TryParse(argument.Substring(startIndexForConvert),out _delay);
+                    Int32.TryParse(argument.Substring(startIndexForConvert), out _delay);
                 }
             }
         }
