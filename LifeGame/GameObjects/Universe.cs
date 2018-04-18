@@ -24,7 +24,7 @@ namespace LifeGame.GameObjects
 
         public bool IsGameOver { get; set; }
 
-        private IList<ICommand> Create(Point startPosition, ConsoleCursor cursor)
+        private IList<ICommand> CreateCommand(Point startPosition, ConsoleCursor cursor)
         {
             int left = startPosition.X + _gameBoard.FrameSize;
             int top = startPosition.Y + _gameBoard.FrameSize;
@@ -46,11 +46,11 @@ namespace LifeGame.GameObjects
             return commands;
         }
 
-        private IList<IGameOverStrategy> Create()
+        private IList<IGameOverStrategy> CreateStrategy()
         {
             GameStrategyListCreator creator = new GameStrategyListCreator(
                _gameOverControl.AliveHistory);
-            return creator.Create();
+            return creator.CreateStrategy();
         }
 
         public void Execute()
@@ -58,7 +58,7 @@ namespace LifeGame.GameObjects
             _generation.Show();
             Point startPosition = new Point(Console.CursorLeft, Console.CursorTop);
             _gameBoard.Show();
-            IList<ICommand> commands = Create(startPosition, _cursor);
+            IList<ICommand> commands = CreateCommand(startPosition, _cursor);
             do
             {
                 _cursor.Show();
@@ -81,7 +81,7 @@ namespace LifeGame.GameObjects
         public void StartLife()
         {
             _gameOverControl.AliveHistory.Add(_gameBoard.Save());
-            IsGameOver = _gameOverControl.IsGameOver(Create());
+            IsGameOver = _gameOverControl.IsGameOver(CreateStrategy());
 
             while (!IsGameOver)
             {
@@ -91,7 +91,7 @@ namespace LifeGame.GameObjects
                 _gameBoard.Show();
                 UpdateGameBoard();
                 _gameOverControl.AliveHistory.Add(_gameBoard.Save());
-                IsGameOver = _gameOverControl.IsGameOver(Create());
+                IsGameOver = _gameOverControl.IsGameOver(CreateStrategy());
                 Thread.Sleep(_delay);
             }
         }

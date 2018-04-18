@@ -12,7 +12,7 @@ namespace LifeGame.GameOverManager
             _history = history;
         }
 
-        public IList<IGameOverStrategy> Create()
+        public IList<IGameOverStrategy> CreateStrategy()
         {
             IList<IGameOverStrategy> gameOverStrategies = new List<IGameOverStrategy>
             {
