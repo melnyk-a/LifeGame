@@ -1,6 +1,6 @@
 ﻿using LifeGame.Memento;
 
-namespace LifeGame.GameOverManager
+namespace LifeGame.Game.GameOverManager
 {
     internal sealed class NoAlive : IGameOverStrategy
     {

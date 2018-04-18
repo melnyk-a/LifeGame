@@ -1,6 +1,6 @@
-﻿using LifeGame.GameObjects;
+﻿using LifeGame.Game.Objects;
 
-namespace LifeGame.ApplicationObjects
+namespace LifeGame.Applications
 {
     internal abstract class Application
     {

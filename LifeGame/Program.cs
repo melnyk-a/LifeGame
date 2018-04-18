@@ -1,4 +1,4 @@
-﻿using LifeGame.ApplicationObjects;
+﻿using LifeGame.Applications;
 using LifeGame.Exception;
 
 namespace LifeGame

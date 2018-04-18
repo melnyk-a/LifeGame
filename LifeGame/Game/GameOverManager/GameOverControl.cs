@@ -1,7 +1,7 @@
 ﻿using LifeGame.Memento;
 using System.Collections.Generic;
 
-namespace LifeGame.GameOverManager
+namespace LifeGame.Game.GameOverManager
 {
     internal sealed class GameOverControl
     {

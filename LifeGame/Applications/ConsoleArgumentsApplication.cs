@@ -1,7 +1,7 @@
 ﻿using LifeGame.Exception;
 using System;
 
-namespace LifeGame.ApplicationObjects
+namespace LifeGame.Applications
 {
     internal sealed class ConsoleArgumentsApplication : Application
     {

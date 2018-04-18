@@ -1,5 +1,5 @@
 ﻿using LifeGame.Cursor;
-using LifeGame.GameObjects;
+using LifeGame.Game.Objects;
 using System;
 
 namespace LifeGame.Commands

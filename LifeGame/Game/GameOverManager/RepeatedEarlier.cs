@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LifeGame.GameOverManager
+namespace LifeGame.Game.GameOverManager
 {
     internal sealed class RepeatedEarlier : IGameOverStrategy
     {

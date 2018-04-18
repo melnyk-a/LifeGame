@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LifeGame.GameObjects
+namespace LifeGame.Game.Objects
 {
     internal sealed class Generation
     {

@@ -1,4 +1,4 @@
-﻿using LifeGame.GameObjects;
+﻿using LifeGame.Game.Objects;
 
 namespace LifeGame.Cursor
 {

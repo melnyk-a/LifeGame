@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LifeGame.GameObjects
+namespace LifeGame.Game.Objects
 {
     internal sealed class Cell
     {

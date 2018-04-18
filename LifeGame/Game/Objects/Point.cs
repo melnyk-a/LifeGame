@@ -1,4 +1,4 @@
-﻿namespace LifeGame.GameObjects
+﻿namespace LifeGame.Game.Objects
 {
     internal struct Point
     {

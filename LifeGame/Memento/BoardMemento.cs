@@ -1,4 +1,4 @@
-﻿using LifeGame.GameObjects;
+﻿using LifeGame.Game.Objects;
 using System.Collections.Generic;
 
 namespace LifeGame.Memento

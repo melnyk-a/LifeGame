@@ -1,4 +1,4 @@
-﻿namespace LifeGame.GameOverManager
+﻿namespace LifeGame.Game.GameOverManager
 {
     internal interface IGameOverStrategy
     {

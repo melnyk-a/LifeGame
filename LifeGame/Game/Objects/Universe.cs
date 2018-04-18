@@ -1,11 +1,11 @@
 ﻿using LifeGame.Commands;
 using LifeGame.Cursor;
-using LifeGame.GameOverManager;
+using LifeGame.Game.GameOverManager;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace LifeGame.GameObjects
+namespace LifeGame.Game.Objects
 {
     internal sealed class Universe
     {
